@@ -5,7 +5,7 @@
   "config": {
     "title": "Coffer",
     "subtitle": "Store yer booty",
-    "url": "https://piratecoffer.github.io/parlay"
+    "url": "https://piratecoffer.github.io/coffer"
   },
   "scripts": {
     "dev": "nuxt",
