@@ -59,7 +59,9 @@
       <v-divider></v-divider>
       <v-list shaped dense>
         <v-list-item @click="selectChan(key)" v-for="(fren, key) in channels" :key="fren.id" :input-value="channel === key">
-          <v-list-item-avatar :color="users[key].color">{{users[key].avatar}}</v-list-item-avatar>
+          <v-list-item-avatar>
+            <v-avatar :color="users[key].color">{{users[key].avatar}}</v-avatar>
+          </v-list-item-avatar>
           <v-list-item-content>
             <v-list-item-title>{{users[key].name}}</v-list-item-title>
             <v-list-item-subtitle class="d-flex align-center">
@@ -67,7 +69,9 @@
               <span class="grey--text">&nbsp;active</span>
             </v-list-item-subtitle>
           </v-list-item-content>
-          <v-list-item-avatar size="26" color="green" class="body-2">{{channels[key].unread}}</v-list-item-avatar>
+          <v-list-item-avatar>
+            <v-avatar size="26" color="green" class="body-2">{{channels[key].unread}}</v-avatar>
+          </v-list-item-avatar>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
