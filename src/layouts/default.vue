@@ -26,7 +26,6 @@
       <v-btn large icon class="mx-1" @click="rightNav = !rightNav">
         <v-avatar size="36" :color="account.color">
           {{account.avatar}}
-          <!-- <img :src="repopath + '/media/images/avatar.png'" alt="Davy Jones"> -->
         </v-avatar>
       </v-btn>
     </v-app-bar>
@@ -69,7 +68,7 @@
               <span class="grey--text">&nbsp;active</span>
             </v-list-item-subtitle>
           </v-list-item-content>
-          <v-list-item-avatar>
+          <v-list-item-avatar size="26">
             <v-avatar size="26" color="green" class="body-2">{{channels[key].unread}}</v-avatar>
           </v-list-item-avatar>
         </v-list-item>
