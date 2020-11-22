@@ -1,6 +1,7 @@
 <template>
   <v-app-bar app id="app-bar" height="56">
     <v-app-bar-nav-icon @click.stop="$store.commit('SET_LEFT_NAV')" class="hidden-sm-and-up" />
+    <!-- anon -->
     <v-toolbar-items>
       <v-btn 
         text 
@@ -8,8 +9,8 @@
         class="home-btn title font-weight-regular mr-0 pl-1" 
         :ripple="false" 
         >
-        <v-avatar size="40" class="mr-2" v-if="$mobile">
-          <v-img :src="repopath + '/media/images/logo.png'">
+        <v-avatar size="40" class="mr-2">
+          <v-img :src="repopath + '/media/images/pirate-logo.png'">
           </v-img>
         </v-avatar>
         {{$store.state.title}}
@@ -40,7 +41,7 @@
 </template>
 <script>
 import userMixins from '~/mixins/userMixins'
-import NotifyMenu from '~/components/trade/NotifyMenu'
+import NotifyMenu from '~/components/theme/NotifyMenu'
 export default {
   name: 'AppBar',
   components: {
