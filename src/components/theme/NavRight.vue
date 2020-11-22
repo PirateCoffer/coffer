@@ -1,7 +1,7 @@
 <template>
   <v-navigation-drawer fixed v-model="drawer" temporary right>
     <template v-slot:prepend>
-      <v-list-item two-line to="/profile/jane" active-class="no-bg">
+      <v-list-item two-line to="/profile/DavyJones" active-class="no-bg">
         <v-list-item-avatar>
           <img :src="repopath + '/media/images/avatar.png'">
         </v-list-item-avatar>
