@@ -1,10 +1,10 @@
 {
   "name": "coffer",
   "version": "1.0.0",
-  "description": "Secure booty storage",
+  "description": "Secure Booty Storage",
   "config": {
     "title": "Coffer",
-    "subtitle": "Store yer booty",
+    "subtitle": "Store yARRR Booty",
     "url": "https://piratecoffer.github.io/coffer"
   },
   "scripts": {

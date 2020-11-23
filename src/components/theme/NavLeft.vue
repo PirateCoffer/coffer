@@ -3,18 +3,23 @@
     app
     v-model="drawer"
     mobile-breakpoint="600"
-    :mini-variant="!$mobile"
+    temporary
     >
     <v-list class="pt-0">
-      <v-list-item link to="/" class="px-2 px-sm-0">
-        <v-list-item-avatar size="40" class="mr-6 mx-sm-auto">
-          <v-img :src="repopath + '/media/images/logo.png'"></v-img>
+      <v-list-item class="pl-2">
+        <v-list-item-avatar size="40" class="mr-5">
+          <v-avatar size="40">
+            <v-img :src="repopath + '/media/images/coffer-logo.png'">
+            </v-img>
+          </v-avatar>
         </v-list-item-avatar>
         <v-list-item-content>
-          <v-list-item-title class="text-h5">{{title}}</v-list-item-title>
+          <v-list-item-title class="text-h5">
+            {{$store.state.title}}
+          </v-list-item-title>
         </v-list-item-content>
       </v-list-item>
-      
+      <v-divider></v-divider>
       <v-tooltip right v-for="item in computedItems" :key="item.id" transition="scroll-x-transition">
         <template v-slot:activator="{ on, attrs }">
           <v-list-item link v-bind="attrs" v-on="$mobile ? {} : on" :to="item.path" :class="btnClass(item)">
@@ -28,20 +33,6 @@
         </template>
         <span>{{item.text}}</span>
       </v-tooltip>
-
-      <v-divider v-if="false"></v-divider>
-      <v-list-item v-if="false" link @click.stop="mini = !mini">
-        <v-list-item-icon>
-          <v-icon v-if="mini">mdi-chevron-right</v-icon>
-        </v-list-item-icon>
-        <v-list-item-content>
-          <v-list-item-title>&nbsp;</v-list-item-title>
-        </v-list-item-content>
-        <v-list-item-icon>
-          <v-icon>mdi-chevron-left</v-icon>
-        </v-list-item-icon>
-      </v-list-item>
-      <v-divider v-if="false"></v-divider>
     </v-list>
   </v-navigation-drawer>
 </template>

@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <!-- Left Nav Drawer -->
-    <!-- <nav-left :items="menu.primary" :title="$store.state.title" :btnClass="btnClass"></nav-left> -->
+    <nav-left :items="menu.primary" :title="$store.state.title" :btnClass="btnClass"></nav-left>
     <!-- Right Nav Drawer -->
     <nav-right :items="menu.user"></nav-right>
     <!-- App Bar -->
@@ -48,17 +48,19 @@ export default {
     // title: process.env.siteTitle,
     menu: {
       primary: [
-        { text: 'Dashboard', icon: 'mdi-view-dashboard', path: '/account/dashboard', access: 'auth' },
-        { text: 'Buy', icon: 'mdi-bitcoin', path: '/buy' },
-        { text: 'Sell', icon: 'mdi-cash-multiple', path: '/sell' },
-        { text: 'Post an ad', icon: 'mdi-plus-circle', path: '/offer/new', access: 'auth' },
-        { text: 'News', icon: 'mdi-newspaper', path: '/blog' },
+        // { text: 'Dashboard', icon: 'mdi-view-dashboard', path: '/account/dashboard', access: 'auth' },
+        { text: 'Send', icon: 'mdi-wallet', path: '/send' },
+        { text: 'Receive', icon: 'mdi-wallet-outline', path: '/receive' },
+        { text: 'Transactions', icon: 'mdi-wallet-travel', path: '/transactions' },
+        // { text: 'Sell', icon: 'mdi-cash-multiple', path: '/sell' },
+        // { text: 'Post an ad', icon: 'mdi-plus-circle', path: '/offer/new', access: 'auth' },
+        // { text: 'News', icon: 'mdi-newspaper', path: '/blog' },
         // { text: 'FAQ', icon: 'mdi-information-variant', path: '/faq' },
         // { text: 'Knowledge', icon: 'mdi-bookshelf', path: '/kb' },
         // { text: 'Forum', icon: 'mdi-forum', path: '/forum' },
         // { text: 'Support', icon: 'mdi-face-agent', path: '/support', access: 'auth' },
-        { text: 'About', icon: 'mdi-coffee', path: '/about' },
-        { text: 'Chat', icon: 'mdi-message', path: '/chat' },
+        // { text: 'About', icon: 'mdi-coffee', path: '/about' },
+        // { text: 'Chat', icon: 'mdi-message', path: '/chat' },
         // { text: 'Blog', icon: 'mdi-post', path: '/blog' },
         // { text: 'New Offer', icon: 'mdi-plus-circle', path: '/offer/new' },
         // { text: 'Offer', icon: 'mdi-ticket', path: '/offer/1234' },
@@ -78,7 +80,7 @@ export default {
         { text: 'Settings', icon: 'mdi-cog', path: '/account/settings' },
         // { text: 'Wallet', icon: 'mdi-wallet', path: '/account/wallet' },
         // { text: 'Open trades & ads', icon: 'mdi-briefcase', path: '/account/dashboard' },
-        { text: 'Transactions', icon: 'mdi-check-circle', path: '/account/completed' },
+        // { text: 'Transactions', icon: 'mdi-check-circle', path: '/account/completed' },
         // { text: 'Cancelled trades', icon: 'mdi-close-box', path: '/account/cancelled' },
         // { text: 'Affiliate program', icon: 'mdi-certificate', path: '/account/affiliate' },
         // { text: 'Trades', icon: 'mdi-receipt', path: '/account/trades' },

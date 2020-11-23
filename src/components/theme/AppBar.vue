@@ -16,11 +16,16 @@
         {{$store.state.title}}
       </v-btn>
     </v-toolbar-items>
+    <v-toolbar-items v-if="!$mobile">
+      <v-btn text to="/send" v-if="$auth">Send</v-btn>
+      <v-btn text to="/receive" v-if="$auth">Receive</v-btn>
+      <v-btn text to="/transactions" v-if="$auth">Transactions</v-btn>
+    </v-toolbar-items>
     <v-spacer></v-spacer>
     <!-- auth -->
-    <notify-menu></notify-menu>
+    <!-- <notify-menu></notify-menu> -->
     <v-toolbar-items class="ml-2 mr-0" v-if="$auth">
-      <v-btn x-large text tile class="balance-amount px-2" to="/account/wallet" active-class="no-bg">
+      <v-btn x-large text tile class="balance-amount px-2" to="/" active-class="no-bg">
         <v-avatar color="black" size="30" class="mr-3">
           <img :src="repopath + '/media/images/pirate-logo.png'">
         </v-avatar>
