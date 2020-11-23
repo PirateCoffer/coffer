@@ -44,6 +44,11 @@
           <div class="text-h4">Receive</div>
         </v-card>
       </v-col>
+      <v-col cols="12">
+        <v-card height="140" color="deep-purple darken-3" class="d-flex justify-center align-center" hover to="/transactions">
+          <div class="text-h4">Transactions</div>
+        </v-card>
+      </v-col>
     </v-row>
   </v-container>
 </template>
@@ -63,6 +68,8 @@ export default {
       0.42,
     ],
   }),
+  methods: {
+  },
 }
 </script>
 

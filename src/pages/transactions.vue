@@ -8,7 +8,7 @@
           </v-card-text>
           <v-divider></v-divider>
           <v-card-text>
-            <v-btn large color="primary" class="mt-2">
+            <v-btn large color="primary" class="mt-2" @click="download">
               <v-icon size="24" left>mdi-format-list-bulleted</v-icon>
               Download CSV
               <!-- FILENAME: realSatoshi - LocalPirate ARRR Transactions - Mon Aug 17 2020 03_40_17 GMT-0700 (Pacific Daylight Time) -->
@@ -30,7 +30,6 @@
               flat
               @click:row="clickRow"
               >
-              <!-- <template v-slot:item="{ item }"></template> -->
               <template v-slot:item.side="{ value }">
                 <v-icon v-if="value === 'buy'" color="success">mdi-plus</v-icon>
                 <v-icon v-else color="error">mdi-minus</v-icon>
@@ -96,13 +95,44 @@ export default {
     async clickRow (item, row) {
       this.$router.push(`/tx/${item.txid}`)
     },
-    async copy () {
-      this.notify('Address copied to clipboard')
+    download () {
+      this.notify('downloading')
+      const labels = this.headers.map(item => {
+        if (item.text === '')
+          return 'Side'
+        return item.text
+      })
+      const csv = this.json2Csv(this.transactions, labels)
+      const downloadLink = document.createElement('a')
+      const blob = new Blob(['\ufeff', csv])
+      const url = URL.createObjectURL(blob)
+      downloadLink.href = url
+      downloadLink.download = 'transactions.csv'
+      document.body.appendChild(downloadLink)
+      downloadLink.click()
+      document.body.removeChild(downloadLink)
     },
-    async sendPirate () {
-      this.continueDialog = false
-      this.notify('Sending Pirate')
-    }
+    json2Csv (objArray, labels) {
+      let array = objArray
+      let str = ''
+      let line = ''
+      if (labels) {
+        for (let index of labels) {
+          line += index + ','
+        }
+        line = line.slice(0, -1)
+        str += line + '\r\n'
+      }
+      for (let ii = 0; ii < array.length; ii++) {
+        let line = ''
+        for (let index in array[ii]) {
+          line += array[ii][index] + ','
+        }
+        line = line.slice(0, -1)
+        str += line + '\r\n'
+      }
+      return str
+    },
   },
 }
 </script>

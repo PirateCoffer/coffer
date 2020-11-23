@@ -8,10 +8,10 @@
         <v-container fluid class="pa-0">
           <v-row>
             <v-col cols="12" sm="7">
-              <v-card>
-                <v-card-text>
-                  <v-row class="subtitle-1">
-                    <v-col cols="4">
+              <v-card class="fill-height">
+                <v-card-text class="fill-height">
+                  <v-row class="subtitle-1 fill-height">
+                    <v-col cols="4" class="fill-height">
                       <v-list dense class="d-flex flex-column align-end">
                         <v-list-item>TX ID:</v-list-item>
                         <v-list-item>Other ID:</v-list-item>
