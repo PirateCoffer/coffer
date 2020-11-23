@@ -5,7 +5,7 @@
         <v-card height="230" color="black">
           <v-card-text class="fill-height d-flex flex-column justify-center align-center">
             <div class="text-h1 mb-5 white--text">Pirate Coffer</div>
-            <div class="text-h4">Store yer booty</div>
+            <div class="text-h4">Store yARRR booty</div>
           </v-card-text>
         </v-card>
       </v-col>
