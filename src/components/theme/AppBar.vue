@@ -10,7 +10,7 @@
         :ripple="false" 
         >
         <v-avatar size="40" class="mr-2">
-          <v-img :src="repopath + '/media/images/pirate-logo.png'">
+          <v-img :src="repopath + '/media/images/coffer-logo.png'">
           </v-img>
         </v-avatar>
         {{$store.state.title}}
